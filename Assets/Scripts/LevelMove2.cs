@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class LevelMove2 : MonoBehaviour
+{
+    public int sceneBuildIndex;
+
+    // Level move zone entered, if collider is a player
+    // Move game to another scene
+    public void OnTriggerEnter2D() 
+    {
+        print ("Trigger Entered");
+
+        //Could use other.GetComponent<Player>() to see if the game object has a Player compenent
+        // Tags work too. Maybe some players have different script components?
+        
+        
+        //Player entered, so move level
+        print("Switching Scene to " + sceneBuildIndex);
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        
+    }
+}
